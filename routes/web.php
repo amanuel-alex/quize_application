@@ -15,9 +15,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
 });
 Route::middleware('auth')->group(function () {
-    Route::view('/', 'home')->name('home');
-    Route::view('/about', 'products.about')->name('about');
-    Route::view('/blog', 'products.blog')->name('blog');
+
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::view('/dashboard', 'users.dashboard')->name('dashboard');
     Route::view('/explore', 'products.explore')->name('explore');
